@@ -48,6 +48,8 @@ A generic "review this code" prompt asks the model to do four jobs at once: find
 
 For a reproducible side-by-side demo of the underlying technique (full file context vs raw diff), see [prpack/examples/invoice-refactor](https://github.com/Lucas2944/prpack/tree/main/examples/invoice-refactor) — paste each context into your model and watch the diff-only review miss a null-deref that the full-context review catches.
 
+**prpack v0.2.0** now inlines these four prompts natively. Run `prpack --review security` (or `performance` / `tests` / `architecture` / `general`) with `ANTHROPIC_API_KEY` set and prpack will pack the PR, append the matching prompt, call Anthropic, and stream the review. See [prpack v0.2.0 release](https://github.com/Lucas2944/prpack/releases/tag/v0.2.0).
+
 I wrote up the longer story behind this here: [Your LLM code reviewer is reading half the file](https://scottthurman.hashnode.dev/your-llm-code-reviewer-is-reading-half-the-file).
 
 ## Related
