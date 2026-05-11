@@ -46,6 +46,8 @@ Save one of these files as `.cursorrules` (renamed) and Cursor's chat will adopt
 
 A generic "review this code" prompt asks the model to do four jobs at once: find security issues, find perf issues, find missing tests, and flag architectural problems. Models do all four poorly. Asking for one concern at a time, with a strict output format and an explicit "skip irrelevant sections" instruction, gives you actually-useful feedback.
 
+For a reproducible side-by-side demo of the underlying technique (full file context vs raw diff), see [prpack/examples/invoice-refactor](https://github.com/Lucas2944/prpack/tree/main/examples/invoice-refactor) — paste each context into your model and watch the diff-only review miss a null-deref that the full-context review catches.
+
 I wrote up the longer story behind this here: [Your LLM code reviewer is reading half the file](https://scottthurman.hashnode.dev/your-llm-code-reviewer-is-reading-half-the-file).
 
 ## Related
